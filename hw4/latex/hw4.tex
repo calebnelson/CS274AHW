@@ -3,6 +3,7 @@
 \usepackage{times}
 \usepackage{amssymb}
 \usepackage{float}
+\usepackage{hyperref}
 \usepackage{amsmath,amssymb,amsfonts,bm}
 
 \newcount\refno\refno=1
@@ -116,7 +117,7 @@ This leaves us with a big O of $O(dKK + dKd + d^3) = O(dMM)$ where $M = max(K, d
 
 \pagebreak
 \subsection*{Appendix: Source Code}
-Unfortunately, some of the code is cut off by the margins of the pdf and so it is not copy pastable. For a copy pastable version, see 
+Unfortunately, some of the code is cut off by the margins of the pdf and so it is not copy pastable. For a copy pastable version, see \url{https://raw.githubusercontent.com/calebnelson/CS274AHW/master/hw4/logistic_regression.py}
 \begin{verbatim}
 ## CS 274 2019, Homework 4, Skeleton Python Code for Logistic Regression
 ## Written by Caleb Nelson
@@ -127,8 +128,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import copy
 import math
-
-### Helper Functions ###
 
 def sigmoid(z):
     return 1 / (1 + np.exp(-z))
@@ -166,7 +165,6 @@ def get_AdaM_update(alpha_0, grad, adam_values, b1=.95, b2=.999, e=1e-8):
     v_hat = adam_values['var'] / (1-b2**adam_values['t'])
 
     return alpha_0 * m_hat/(np.sqrt(v_hat) + e)
-
 
 ### Model Training ###
 
@@ -275,7 +273,6 @@ if __name__ == "__main__":
 
     ### Initialize model parameters
     beta = np.random.normal(scale=.001, size=(train_x.shape[1],1))
-
     print("Running code for problem 2")
     problem_two()
     print("Running code for problem 3")
