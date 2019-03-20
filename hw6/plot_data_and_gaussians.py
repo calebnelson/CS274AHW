@@ -21,7 +21,8 @@ def plot_data_and_gaussians(data_file_name, mu1, mu2, covar1, covar2):
 
     P.show()
 
-data = np.genfromtxt("dataset1.txt", delimiter=' ')
-plot_data_and_gaussians("dataset1.txt", np.zeros((2,)), np.mean(data,0), np.eye(2), np.eye(2))	
+if __name__ == "__main__":
+    data = np.genfromtxt("dataset1.txt", delimiter=' ')
+    plot_data_and_gaussians("dataset1.txt", np.zeros((2,)), np.mean(data,0), np.eye(2), np.eye(2))	
 
  

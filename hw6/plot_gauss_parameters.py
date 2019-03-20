@@ -28,8 +28,9 @@ def  plot_gauss_parameters(mu, covar, colorstr, delta=.1):
 
     P.contour(X, Y, Z, colors=colorstr, linewidths=4)
 
-#plot_gauss_parameters(3+np.zeros((2,)), .5*np.eye(2), 'r')
-#P.show()
+if __name__ == "__main__":
+    plot_gauss_parameters(3+np.zeros((2,)), .5*np.eye(2), 'r')
+    P.show()
 
 	
 
